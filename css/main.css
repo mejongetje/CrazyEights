@@ -1,0 +1,705 @@
+body {
+    background: rgb(21, 201, 117);
+    margin: 0;  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+img {
+    max-height: 17vh;
+    max-width: auto;
+}
+
+h1 {
+    font-size: x-large;
+    font-weight: 800;
+    margin: 0px;
+}
+
+/* PLAYING TABLE */
+
+.container {
+    display: grid;
+    place-items: center;
+    grid-template-columns: .75fr 1fr 2.5fr 1fr .75fr;
+    grid-template-rows: 2fr 6.5fr .2fr;
+}
+
+.space {
+    grid-area: 1/1/3/2;
+    align-self:start;
+}
+
+.space2 {
+    grid-area: 1/5/3/6;
+    align-self:start;
+}
+
+#advertisement {
+    grid-area: 1/2/3/3;
+    align-self:start;
+    border: 1px solid silver;
+}
+
+#advertisement2 {
+    grid-area: 1/4/3/5;
+    align-self:start;
+    border: 1px solid silver;
+}
+
+.mobile-ad, .close-ad {
+    display: none;
+}
+
+.hero-outer {
+    grid-area: 1/3/2/4;
+    display: grid;
+    position: relative;
+    grid-template-columns: 2fr .5fr;
+    grid-template-rows: 1fr ; 
+    border: 3px solid rgb(5, 82, 46);
+    border-radius: .75em;
+    width: 85vh;
+    height: 85vh;
+    margin: 0;
+    align-self: start;    
+}
+
+/* BATTLE FIELD */
+
+.hero-inner {
+    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.2fr .8fr 1fr;
+}
+
+.opponent {
+    grid-area: 1/1/2/2;
+    position: relative;
+}
+
+.table-center {
+    grid-area: 2/1/3/2;
+    display: grid; 
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.center-space {
+    grid-area: 1/1/2/2;
+}
+
+.rest-deck {
+    position: relative;
+    grid-area: 1/2/2/3;
+}
+
+.discard-box {
+    position: relative;
+    grid-area: 1/3/2/4;
+}
+
+.messages {
+    display: none;
+    background: rgb(180, 238, 202);
+    grid-area: 3/1/4/2;
+    text-align: center;
+    border-radius: .25em;
+    height: 70%;
+    width: 80%;
+    margin-left: 3em;
+    padding-top: .15em;
+    font-size: 2.75vh;
+}
+
+.player {
+    grid-area: 4/1/5/2;
+    position: relative;
+}
+
+/* MISC  */
+
+.suit-options {
+    display: none;
+    background: rgb(180, 238, 202, .9);
+    border-radius: .5em;
+    position: absolute;
+    height: 12%;
+    width: 16em;
+    left: 105px;
+    top: 180px;
+    z-index: 99;
+    padding: 1em;
+    margin: 1em;
+    font-size: small;   
+}
+
+.suits-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.suits-hearts {
+    grid-area: 1/1/2/2;
+    color: red;
+}
+
+.suits-spades {
+    grid-area: 1/2/2/3;
+}
+
+.suits-diamonds {
+    grid-area: 1/3/2/4;
+    color: red;
+}
+
+.suits-clubs {
+    grid-area: 1/4/2/5;
+}
+
+.suits-hearts, .suits-spades, .suits-diamonds, .suits-clubs {
+    font-size:36px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.play-multi-cards, .show-score, .next-round, .next-game {
+    font-size: medium;
+    font-weight: 700;
+    font-style: italic;
+    color: blue;
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+}
+
+.new-suit-hearts, .new-suit-spades, .new-suit-diamonds, .new-suit-clubs {
+    display: none;
+    position: absolute;
+    top: 24vh;
+    left: 54vh;
+    font-size: 92px;
+    z-index: 100;
+}
+
+.new-suit-hearts, .new-suit-diamonds {
+    color: red;
+}
+
+/* CONTROL PANEL */
+
+.control {
+    background-color: rgb(21, 201, 117);
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    grid-area: 1/2/4/3;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 1.25fr 0.5fr 0.5fr 1.5fr; 
+}
+
+.strategy, .rules, .score, .trivia {
+    background-color: rgb(32, 122, 74);
+    color:white;
+    font-size: 0.75em;
+    padding-top: 1em;
+    cursor: pointer;
+}
+
+.strategy {   
+    grid-area: 2/1/3/2;    
+    border-bottom: 1px solid rgb(180, 238, 202);
+    border-top-left-radius: .5em;   
+}
+
+.strategy:hover {
+    border: 2px solid rgb(180, 238, 202);
+}
+
+.rules {
+    grid-area: 3/1/4/2;
+    border-bottom: 1px solid rgb(180, 238, 202);
+}
+
+.rules a, .strategy a, .trivia a {
+    text-decoration: none;
+    color: white;
+}
+
+.rules:hover {
+    border: 2px solid rgb(180, 238, 202);
+}
+
+.buttons {
+    background: rgb(32, 122, 74);
+    padding-top: 1.25em;
+    color: white;
+    border-bottom: 1px solid rgb(180, 238, 202);
+    font-size: 3.25vh;
+    grid-area: 4/1/5/2;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    border: 2px solid rgb(180, 238, 202); 
+}
+
+.deal {
+    font-size:5.5vh;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.score {
+    border-bottom: 1px solid rgb(180, 238, 202);
+    grid-area: 5/1/6/2;
+}
+
+.trivia {
+    border-bottom-left-radius: .5em;
+    grid-area: 6/1/7/2;
+}
+
+.trivia:hover {
+    border: 2px solid rgb(180, 238, 202);
+}
+
+.score:hover {
+    border: 2px solid rgb(180, 238, 202); 
+}
+
+.control-top {
+    grid-area: 1/1/2/2;
+}
+
+.control-bottom {
+    grid-area: 8/1/9/2;
+}
+
+
+/* SCORE SHEET */
+
+.scoreboard {
+    display: none;
+    background: rgb(180, 238, 202, .9);
+    border-radius: .5em;
+    position: absolute;
+    height: 60vh;
+    width: 70vmin;
+    left: 3vh;
+    top: 10px;
+    z-index: 99;
+    padding: 1em;
+    margin: 1em;
+    font-size: small;
+    
+}
+
+.cross {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.75em;
+    font-weight:900;
+    text-align: right;
+    padding-right: 1em;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.score-container {
+    display: grid;
+    background-color: black;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.score-title {
+    font-size: large;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: .15em;
+}
+
+.score-round, .score-player-name, .score-opponent-name, .score-player, .score-opponent {
+    background-color: rgb(180, 238, 202);
+}
+
+.score-total, .score-player-total, .score-opponent-total {
+    background-color: rgb(180, 238, 202);
+    font-weight: 600;
+}
+
+.winner-text {
+    font-size: large;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* NAVIGATION */
+
+h2 {
+    margin: 0;
+    margin-left: 1em;
+    padding-bottom: 0.15em;
+    color: white;
+}
+  
+.title {
+    text-decoration: none;
+    display: flex;
+    cursor:pointer;  
+    color: inherit;
+}
+
+h2 a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.club {
+    color: rgb(94, 235, 145);
+    font-size: 24px;
+    font-weight: 800;
+    padding-left: .15em;   
+    white-space: nowrap;
+}
+
+ 
+
+.navbar{  
+    background:rgb(5, 72, 36);  
+    display:flex;  
+    top:0;  
+    height:3em;  
+    justify-content: space-between;
+    align-items:center;   
+    padding:0px, 5px;  
+    padding-right: 2em;
+    white-space: nowrap;
+    
+}  
+
+.mobile-nav {
+    display: none;
+}
+
+.nav-sub{  
+    display: flex;
+    justify-content: space-between;
+    font-size:small;
+} 
+
+.mobile-sub.active {
+    left: 0;
+}
+
+.popular-games {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.list-item {  
+    padding: 1em;
+    list-style:none; 
+} 
+
+.hammer-item {
+    display: none;
+    padding: 1em;
+}
+
+.nav-link{  
+    color:rgb(213, 206, 206);  
+    text-decoration:none;  
+    text-align:right;
+}  
+
+.nav-link:hover {
+    color: white;
+}
+
+.hammer{  
+    display:none;  
+    padding:5px;  
+    cursor:pointer;  
+}  
+
+.hammer.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hammer.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hammer.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {  
+    display:block;  
+    width:35px;  
+    height:3px;  
+    margin:5px auto;  
+    background-color: rgb(5, 72, 36); 
+    transition: 0.3s;  
+}  
+
+/* GAME NAME */
+
+.game-name {
+  height: 1.2em;
+  text-align: center;
+  color: rgb(3, 58, 29); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  font-weight:900;
+  font-style: italic;
+  letter-spacing: .4em;
+  padding-bottom: 0.25em;
+}
+
+.mobile-game-name {
+    display: none;
+}
+
+/*  NOTES */
+
+.notes {
+    background: white;
+    grid-area: 2/3/3/4;
+    width: 85vh;
+    border:2px solid rgb(5, 82, 46);
+    border-radius: .75em;
+    text-align: center;
+    align-self: start;
+    padding: 2em;
+    margin-top: 3em;
+    
+}
+
+
+ol {
+    text-align: left;
+}
+
+
+.game-rules {
+    padding: 0;
+    margin:0;
+    text-align: center;
+}
+
+.game-rules p {
+    text-align: left;
+
+}
+
+h3 {
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 0;
+}
+
+.back {
+    text-align: right;
+    padding-right: 2em;
+    padding-top: .25em;
+    padding-bottom:0;
+    margin:0;
+}
+
+.rules-sub {
+    text-align: left;
+}
+
+
+li {
+    list-style: square inside none;
+}
+
+.glos-bold {
+    font-weight: 700;
+
+}
+
+/* Copyright */
+
+.copyright {
+    grid-area: 3/3/4/4;
+    font-size: small;
+    height: 3em;
+    padding-top: 1.5em;
+}
+
+@media only screen and (max-width: 560px) {
+
+    html,body{
+        overflow-x: hidden;
+    }
+
+    #advertisement {
+        display: none;
+    }
+
+    #advertisement2 {
+        display: none;
+    }
+
+    .mobile-ad {
+        display: block;
+        border: 1px solid silver;
+    }
+
+    .close-ad {
+        display: block;
+        font-size: small;
+        font-style: italic;
+        text-decoration: underline;
+        text-align: center;
+        color: blue;
+
+    }
+
+
+    .space {
+        display: none;
+    }
+
+    .space2 {
+        display: none;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .popular-games {
+        display: none;
+    }
+    .navbar {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+    .mobile-sub{  
+        background-color: white;  
+        position:absolute;  
+        border:3px solid rgba(22, 86, 53);
+        border-bottom-right-radius: .75em;
+        border-top-right-radius: .75em;
+        width:75%; 
+        height: 70vh;
+        top: 10vh; 
+        left: -100%;  
+        font-size: xx-large;
+        text-align: left;
+        padding-right: 0.5em;
+        padding-bottom: 1em; 
+        flex-direction:column;    
+        transition: 0.3s;
+        z-index:999;   
+    }  
+
+    .nav-link {
+        font-style: italic;
+        color: rgba(22, 86, 53);
+    }
+
+    .nav-link:hover {
+        color:rgb(32, 122, 74);
+    }
+    .hammer-item {
+        font-weight: 700;
+        padding-top: 2em;
+        padding-bottom: 10px;
+        display: block;
+    }
+
+    .nav-change{  
+       transform:translate(0%);
+    }  
+
+    .hammer{  
+        display:block;  
+    }  
+
+    .game-name {
+        display: none;
+    }
+ 
+    .mobile-game-name {
+        position: absolute;
+        display: block;
+        width: 80vmin;
+        top: .25em;
+        font-style: italic;
+        font-size: large;
+        font-weight: 800;
+        letter-spacing: .5em;
+        color: rgb(3, 58, 29); 
+        left: 3.5em;
+        }
+
+    .hero-outer {
+        border:none; 
+        width: 95vw;
+        height: 90vh;
+    }
+
+    .notes {
+        margin-top: 7em;
+        width: 80vw;
+    }
+
+    .messages {
+        width: 90%;
+        height: 80%;
+        margin: 5vw;
+    }
+
+    .table-center {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .center-space {
+        display: none;
+    }
+    
+    .rest-deck {
+        grid-area: 1/1/2/2;
+    }
+    
+    .discard-box {
+        grid-area: 1/2/2/3;
+    }
+
+    .new-suit-hearts, .new-suit-spades, .new-suit-diamonds, .new-suit-clubs {
+        top: 26vh;
+        left: 53vw;
+    }
+
+    .suit-options {
+        left: 12vw;
+        top: 28vh;  
+    }
+
+
+    
+
+}

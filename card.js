@@ -8,8 +8,8 @@ export class Card {
         const cardSuitesImg = "hdsc"
         const cardRanks = '23456789tjqka';  
         this.name = `${cardRanks[this.rank-2]}${cardSuites[this.suit-1]}`; 
-        this.img = `assets/images/cards/${cardSuitesImg[this.suit-1]}${cardRanks[this.rank-2]}.svg`; 
-        this.imgBack = `assets/images/cards/${cardSuitesImg[this.suit-1]}${cardRanks[this.rank-2]}back.svg`          
+        this.img = `images/cards/${cardSuitesImg[this.suit-1]}${cardRanks[this.rank-2]}.svg`; 
+        this.imgBack = `images/cards/${cardSuitesImg[this.suit-1]}${cardRanks[this.rank-2]}back.svg`          
     }
 
     toString(){
